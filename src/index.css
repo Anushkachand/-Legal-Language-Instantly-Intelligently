@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Deep Black Background */
+    --background: 222 47% 4%; 
+    --foreground: 210 40% 98%;
+
+    /* Glass Cards - Dark Blue/Black Tint */
+    --card: 222 47% 11% / 0.7;
+    --card-foreground: 210 40% 98%;
+
+    /* Brand Blue (The "Electric" Blue) */
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 11%;
+
+    /* Secondary Blue (Muted/Deep) */
+    --secondary: 217 32% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* Borders and Inputs */
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 224 76% 48%;
+
+    --radius: 0.75rem;
+
+    /* Gradient for the AI background vibe */
+    --gradient-start: 222 47% 4%;
+    --gradient-mid: 222 47% 8%;
+    --gradient-end: 217 91% 10%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    min-height: 100vh;
+    /* Updated to a much darker, professional gradient */
+    background: radial-gradient(
+      circle at top center,
+      hsl(var(--gradient-mid)) 0%,
+      hsl(var(--gradient-start)) 100%
+    );
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  /* Updated Glass effect for a Dark AI feel */
+  .glass {
+    background: hsla(222, 47%, 11%, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid hsla(217, 91%, 60%, 0.1);
+  }
+
+  .glass-strong {
+    background: hsla(222, 47%, 11%, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid hsla(217, 91%, 60%, 0.2);
+  }
+}
